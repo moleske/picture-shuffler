@@ -28,10 +28,6 @@ jobs:
       run: |
         GOOS=linux GOARCH=amd64 go build -v -o bin/picture-shuffler_linux main.go
 
-    - name: Build darwin
-      run: |
-        GOOS=darwin GOARCH=amd64 go build -v -o bin/picture-shuffler_darwin main.go
-
     - name: Build windows
       run: |
         GOOS=windows GOARCH=amd64 go build -v -o bin/picture-shuffler.exe main.go
@@ -39,6 +35,29 @@ jobs:
     - name: Build pi
       run: |
         GOOS=linux GOARCH=arm64 go build -v -o bin/picture-shuffler_pi main.go
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: binaries
+        path: bin
+  
+  build-mac:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.17
+
+    - name: Prepare
+      run: |
+        mkdir bin
+
+    - name: Build darwin
+      run: |
+        GOOS=darwin GOARCH=amd64 go build -v -o bin/picture-shuffler_darwin main.go
 
     - uses: actions/upload-artifact@v2
       with:
