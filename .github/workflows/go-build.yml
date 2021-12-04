@@ -20,6 +20,8 @@ jobs:
 
     - name: Build
       run: |
+        apt update
+        apt install libgl1-mesa-dev -y
         GOOS=linux GOARCH=amd64 go build -v -o bin/picture-shuffler_linux main.go
         GOOS=darwin GOARCH=amd64 go build -v -o bin/picture-shuffler_darwin main.go
         GOOS=windows GOARCH=amd64 go build -v -o bin/picture-shuffler.exe main.go
