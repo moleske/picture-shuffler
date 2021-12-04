@@ -36,7 +36,7 @@ jobs:
   build-pi:
     runs-on: ubuntu-latest
     container:
-      image: "balenalib/raspberry-pi"
+      image: "debian:buster"
     steps:
     - uses: actions/checkout@v2
 
