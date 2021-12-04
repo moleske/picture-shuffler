@@ -18,13 +18,26 @@ jobs:
       with:
         go-version: 1.17
 
-    - name: Build
+    - name: Prepare
       run: |
         sudo apt update
         sudo apt install libgl1-mesa-dev xorg-dev -y
+        mkdir bin
+
+    - name: Build linux
+      run: |
         GOOS=linux GOARCH=amd64 go build -v -o bin/picture-shuffler_linux main.go
+
+    - name: Build darwin
+      run: |
         GOOS=darwin GOARCH=amd64 go build -v -o bin/picture-shuffler_darwin main.go
+
+    - name: Build windows
+      run: |
         GOOS=windows GOARCH=amd64 go build -v -o bin/picture-shuffler.exe main.go
+
+    - name: Build pi
+      run: |
         GOOS=linux GOARCH=arm64 go build -v -o bin/picture-shuffler_pi main.go
 
     - uses: actions/upload-artifact@v2
