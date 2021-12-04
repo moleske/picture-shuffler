@@ -36,8 +36,7 @@ jobs:
   build-pi:
     runs-on: ubuntu-latest
     container:
-      image: "balenalib/raspberry-pi:buster"
-      options: "--entrypoint bin/bash"
+      image: "balenalib/raspberry-pi"
     steps:
     - uses: actions/checkout@v2
 
