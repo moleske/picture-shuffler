@@ -1,0 +1,31 @@
+name: Go Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.17
+
+    - name: Build
+      run: |
+        GOOS=linux GOARCH=amd64 go build -v -o bin/picture-shuffler_linux main.go
+        GOOS=darwin GOARCH=amd64 go build -v -o bin/picture-shuffler_darwin main.go
+        GOOS=windows GOARCH=amd64 go build -v -o bin/picture-shuffler.exe main.go
+        GOOS=linux GOARCH=arm64 go build -v -o bin/picture-shuffler_pi main.go
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: binaries
+        path: bin
