@@ -16,7 +16,11 @@ func Shuffle(cmd *cobra.Command, args []string) {
 	window.SetFullScreen(true)
 	text := canvas.NewText("images coming soon", image.Black)
 	window.SetContent(text)
-
+	window.Canvas().SetOnTypedKey(func(k *fyne.KeyEvent) {
+		if k.Name == "Escape" {
+			window.Close()
+		}
+	})
 	go changeContent(window, args[0])
 
 	window.ShowAndRun()
