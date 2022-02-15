@@ -28,7 +28,7 @@ jobs:
       run: |
         go test ./... -v
 
-    - name: Build linux
+    - name: Build ubuntu
       run: |
         GOOS=linux GOARCH=amd64 go build -v -o bin/picture-shuffler_linux main.go
 
@@ -37,37 +37,37 @@ jobs:
         name: binaries
         path: bin
 
-#   build-pi:
-#     runs-on: ubuntu-latest
-#     container:
-#       image: "debian:buster"
-#     steps:
-#     - uses: actions/checkout@v2
+  build-pi:
+   runs-on: ubuntu-latest
+   container:
+     image: "debian:buster"
+   steps:
+   - uses: actions/checkout@v2
 
-#     - name: Set up Go
-#       uses: actions/setup-go@v2
-#       with:
-#         go-version: 1.17
+   - name: Set up Go
+     uses: actions/setup-go@v2
+     with:
+       go-version: 1.17
 
-#     - name: Prepare
-#       run: |
-#         apt update
-#         apt install libgl1-mesa-dev xorg-dev -y
-#         mkdir bin
-#
-#     - name: Test
-#       run: |
-#         go test ./... -v
+   - name: Prepare
+     run: |
+       apt update
+       apt install libgl1-mesa-dev xorg-dev -y
+       mkdir bin
 
-#     - name: Build pi
-#       run: |
-#         go env
-#         GOOS=linux GOARCH=arm64 go build -v -o bin/picture-shuffler_pi main.go
+   - name: Test
+     run: |
+       go test ./... -v
 
-#     - uses: actions/upload-artifact@v2
-#       with:
-#         name: binaries
-#         path: bin
+   - name: Build debian
+     run: |
+       go env
+       GOOS=linux GOARCH=amd64 go build -v -o bin/picture-shuffler_pi main.go
+
+   - uses: actions/upload-artifact@v2
+     with:
+       name: binaries
+       path: bin
   
   build-mac:
     runs-on: macos-latest
