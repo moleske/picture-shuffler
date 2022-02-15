@@ -52,7 +52,7 @@ jobs:
    - name: Prepare
      run: |
        apt update
-       apt install libgl1-mesa-dev xorg-dev -y
+       apt install libgl1-mesa-dev xorg-dev ca-certificates build-essential -y
        mkdir bin
 
    - name: Test
