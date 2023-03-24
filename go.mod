@@ -3,14 +3,14 @@ module github.com/moleske/picture-shuffler
 go 1.17
 
 require (
-	fyne.io/fyne/v2 v2.3.1
+	fyne.io/fyne/v2 v2.3.2
 	github.com/onsi/ginkgo/v2 v2.9.2
 	github.com/onsi/gomega v1.27.4
 	github.com/spf13/cobra v1.6.1
 )
 
 require (
-	fyne.io/systray v1.10.1-0.20230207085535-4a244dbb9d03 // indirect
+	fyne.io/systray v1.10.1-0.20230312215936-7f71b037e260 // indirect
 	github.com/benoitkugler/textlayout v0.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fredbi/uri v0.1.0 // indirect
