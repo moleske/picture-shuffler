@@ -6,7 +6,7 @@ require (
 	fyne.io/fyne/v2 v2.3.3
 	github.com/onsi/ginkgo/v2 v2.9.2
 	github.com/onsi/gomega v1.27.6
-	github.com/spf13/cobra v1.6.1
+	github.com/spf13/cobra v1.7.0
 )
 
 require (
@@ -28,7 +28,7 @@ require (
 	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/google/pprof v0.0.0-20210407192527-94a9f03dee38 // indirect
 	github.com/gopherjs/gopherjs v1.17.2 // indirect
-	github.com/inconshreveable/mousetrap v1.0.1 // indirect
+	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/jsummers/gobmp v0.0.0-20151104160322-e2ba15ffa76e // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
