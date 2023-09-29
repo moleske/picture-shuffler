@@ -16,7 +16,8 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
-        go-version: 1.18
+        go-version-file: go.mod
+        check-latest: true
 
     - name: Prepare
       run: |
@@ -47,7 +48,8 @@ jobs:
    - name: Set up Go
      uses: actions/setup-go@v2
      with:
-       go-version: 1.18
+       go-version-file: go.mod
+       check-latest: true
 
    - name: Prepare
      run: |
@@ -77,7 +79,8 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
-        go-version: 1.18
+        go-version-file: go.mod
+        check-latest: true
 
     - name: Prepare
       run: |
@@ -104,7 +107,8 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
-        go-version: 1.18
+        go-version-file: go.mod
+        check-latest: true
 
     - name: Prepare
       run: |
