@@ -1,6 +1,6 @@
 module github.com/moleske/picture-shuffler
 
-go 1.17
+go 1.21
 
 require (
 	fyne.io/fyne/v2 v2.4.0
