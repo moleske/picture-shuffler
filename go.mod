@@ -5,7 +5,7 @@ go 1.21
 require (
 	fyne.io/fyne/v2 v2.4.1
 	github.com/onsi/ginkgo/v2 v2.13.0
-	github.com/onsi/gomega v1.29.0
+	github.com/onsi/gomega v1.30.0
 	github.com/spf13/cobra v1.8.0
 )
 
