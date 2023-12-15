@@ -36,9 +36,9 @@ jobs:
       run: |
         GOOS=linux GOARCH=amd64 go build -v -o bin/picture-shuffler_linux main.go
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
-        name: binaries
+        name: binaries-linux
         path: bin
 
   build-pi:
@@ -69,9 +69,9 @@ jobs:
        go env
        GOOS=linux GOARCH=amd64 go build -v -o bin/picture-shuffler_pi main.go
 
-   - uses: actions/upload-artifact@v3
+   - uses: actions/upload-artifact@v4
      with:
-       name: binaries
+       name: binaries-pi
        path: bin
   
   build-mac:
@@ -97,9 +97,9 @@ jobs:
       run: |
         GOOS=darwin GOARCH=amd64 go build -v -o bin/picture-shuffler_darwin main.go
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
-        name: binaries
+        name: binaries-mac
         path: bin
 
   build-windows:
@@ -125,9 +125,9 @@ jobs:
       run: |
         go build -v -o bin/picture-shuffler.exe main.go
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
-        name: binaries
+        name: binaries-windows
         path: bin
 
   dependabot:
