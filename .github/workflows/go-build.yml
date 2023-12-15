@@ -38,7 +38,7 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
-        name: binaries
+        name: binaries-linux
         path: bin
 
   build-pi:
@@ -71,7 +71,7 @@ jobs:
 
    - uses: actions/upload-artifact@v4
      with:
-       name: binaries
+       name: binaries-pi
        path: bin
   
   build-mac:
@@ -99,7 +99,7 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
-        name: binaries
+        name: binaries-mac
         path: bin
 
   build-windows:
@@ -127,7 +127,7 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
-        name: binaries
+        name: binaries-windows
         path: bin
 
   dependabot:
